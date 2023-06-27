@@ -1,12 +1,16 @@
 
 * {
-   border-style: dashed;
+   /*border-style: dashed;*/
    box-sizing: border-box;
 }
 
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
+}
+
+a {
+    text-decoration: none;
 }
 
 .container {
@@ -22,12 +26,23 @@ body {
     align-items: center;
 }
 
+/*Start Header */
 .header {
     grid-area: header;
     background-color: #67b5dd;
     color: #fff;
 }
 
+    .nav1{
+        padding: 10px;
+    }
+
+    .nav1 i {
+        margin-left: 20px;
+    }
+/*End Header */
+
+/*Start Nav*/
 .nav {
     grid-area: nav;
     background-color: #fff;
@@ -35,6 +50,63 @@ body {
     margin: 0 auto;
 }
 
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+    }
+
+        .logo {
+            background: #fff;
+        }
+
+            .logo img{
+                width: 80%;
+            }
+
+        .nav2 {
+
+        }
+
+        .nav2 ul{
+            display: flex;
+            list-style: none;
+            align-content: center;
+            justify-content: center
+        }
+
+        .nav a{
+            color: #333;
+            /*padding: 10px 12px;*/
+            text-align: center;
+            font-weight: bold;
+            line-height: 20px;
+        }
+
+        .nav a:hover{
+            color: orange;
+        }
+
+        .list-submenu {
+            display: flex;
+            align-items: center;
+        }
+
+        .submenu {
+            width: 100%;
+            white-space: nowrap;
+        }
+
+            .button {
+                background: #9dba4c;
+                border: none;
+                border-radius: 20px;
+                color: #ffffff;
+                font-weight: bold;
+            }
+/*End Nav*/
+
+/*Start Slider */
 .slider {
     grid-area: slider;
     background: url(../img/backgroung.png);
@@ -42,8 +114,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
 }
+/*End Slider */
 
 .section {
     grid-area: section;
@@ -62,6 +134,41 @@ body {
 
         .article {
             background-color: #fff;
+            border-radius: 15px;
+        }
+
+        .article span {
+            color: #7ebae0;
+            font-weight: 100;
+            font-size: small;
+            margin-right: 20px;
+        }
+
+        .article a {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .article img{
+            width: 100%;
+            border-radius: 15px;
+            opacity: 0.9;
+
+            transition: transform 2s, opacity 1s ease-in-out;
+            -moz-transition: transform 2s;
+            -webkit-transition: transform 2s;
+            -o-transition: transform 2s;
+            -ms-transition: transform 2s;
+            
+        }
+
+        .article img:hover{
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        
+        .article .img {
+            overflow: hidden;
         }
 
 .footer {
@@ -75,3 +182,80 @@ body {
         padding: 10px;
         height: auto;
     }
+
+#btn-menu {
+    display: none;
+}
+
+@media all and (max-width: 425.99999px) {
+    .logo {
+        display: none;
+    }
+
+    .menu {
+        align-items: left;
+    }
+
+    .slider {
+        width: 100%;
+        height: 50px;
+    }
+
+    .list-submenu {
+        display: block;
+        
+    }
+
+    .submenu {
+        width: 100%;
+    }
+
+    .nav2 ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0;
+    }
+
+
+    .articles{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        row-gap: 5px;
+        width: 100%;
+    }
+
+    nav {
+        background-color: #7ebae0;
+    }
+
+    nav ul {
+        list-style: none;
+        display: none;
+        margin-top: -20px;
+    }
+
+    .nav2 a {
+        font-weight: lighter;
+    }
+
+    #btn-menu {
+        display: block;
+        background: transparent;
+        font-size: 1.5rem;
+        opacity: 0.5;
+        border: none;
+    }
+
+    #btn-menu:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    #btn-menu:active {
+        opacity: 1;
+        cursor: pointer;
+    }
+
+}
